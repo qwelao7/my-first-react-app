@@ -1,22 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {createStore} from 'redux'
+import React from 'react';
 
-class App extends Component {
-  render() {
+class App extends React.Component {
+  render () {
+    const boss = 'qwelao7'
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+        <div>
+          <h2>独立团,boss:{boss}</h2>
+          <FirstCommand boss='qwe'></FirstCommand>
+        </div>
+    )
   }
 }
 
-export default App;
+class FirstCommand extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      soldiers: ['111', '222', '333']
+    }
+  }
+
+  render () {
+    return (
+        <div>
+          <h2>一营营长：{this.props.boss}</h2>
+          <ul>
+            {this.state.soldiers.map(val => {
+              return <li key={val}>{val}</li>
+            })}
+          </ul>
+        </div>
+    )
+  }
+}
+
+export default App
