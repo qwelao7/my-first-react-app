@@ -2,7 +2,7 @@ import React from 'react';
 
 class App extends React.Component {
   render () {
-    const boss = 'qwelao7'
+    const boss = 'qwelao7';
     return (
         <div>
           <h2>独立团,boss:{boss}</h2>
@@ -14,11 +14,12 @@ class App extends React.Component {
 
 class FirstCommand extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       soldiers: ['111', '222', '333']
     }
   }
+
 
   render () {
     return (
